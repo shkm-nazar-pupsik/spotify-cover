@@ -1,63 +1,65 @@
 const Megadeth = [
     {
         id: 1.1,
-        title:"Holy wars... The Punishment Due",
-        artist:"Megadeth",
-        album:"Rust in peace",
-        cover:"..public/img/rip.png",
-        track:"../public/music/Megadeth - Holy Wars… The Punishment Due.mp3"
+        title: "Holy Wars... The Punishment Due",
+        artist: "Megadeth",
+        album: "Rust in Peace",
+        cover: "../public/img/rip.png",
+        track: "../public/music/Megadeth - Holy Wars… The Punishment Due.mp3"
     },
     {
         id: 1.2,
-        title:"Hangar18",
-        artist:"Megadeth",
-        album:"Rust in peace",
-        cover:"../public/img/rip.png",
-        track:"../public/music/Megadeth - Hangar 18.mp3"
+        title: "Hangar 18",
+        artist: "Megadeth",
+        album: "Rust in Peace",
+        cover: "../public/img/rip.png",
+        track: "../public/music/Megadeth - Hangar 18.mp3"
     },
     {
         id: 1.3,
-        title:"Tornado of Souls",
-        artist:"Megadeth",
-        album:"Rust in peace",
-        cover:"../public/img/rip.png",
-        track:"../public/music/Megadeth - Tornado Of Souls.mp3"
+        title: "Tornado of Souls",
+        artist: "Megadeth",
+        album: "Rust in Peace",
+        cover: "../public/img/rip.png",
+        track: "../public/music/Megadeth - Tornado Of Souls.mp3"
     },
     {
         id: 1.4,
-        title:"Angry Again",
-        artist:"Megadeth",
-        album:"Hidden Treasures",
-        cover:"../public/img/HT.png",
-        track:"../public/music/Megadeth - Angry Again.mp3"
+        title: "Angry Again",
+        artist: "Megadeth",
+        album: "Hidden Treasures",
+        cover: "../public/img/HT.png",
+        track: "../public/music/Megadeth - Angry Again.mp3"
     }
-]  
-const Pantera =[
+];
+
+const Pantera = [
     {
         id: 2.1,
-        title:"10s",
-        artist:"Pantera",
-        album:"The Great Southern Trendkill",
-        cover:"..public/img/TGST.png",
-        track:"../public/music/Pantera - 10s.mp3"
+        title: "10s",
+        artist: "Pantera",
+        album: "The Great Southern Trendkill",
+        cover: "../public/img/TGST.png",
+        track: "../public/music/Pantera - 10s.mp3"
     },
     {
         id: 2.2,
-        title:"Floods",
-        artist:"Pantera",
-        album:"The Great Southern Trendkill",
-        cover:"..public/img/TGST.png",
-        track:"../public/music/Pantera - Floods.mp3"
-    },
-]
+        title: "Floods",
+        artist: "Pantera",
+        album: "The Great Southern Trendkill",
+        cover: "../public/img/TGST.png",
+        track: "../public/music/Pantera - Floods.mp3"
+    }
+];
+
 const AliceInChains = [
     {
         id: 3.1,
-        title: "Down in A Hole",
+        title: "Down In A Hole",
         artist: "Alice in Chains",
         album: "Dirt",
         cover: "../public/img/Dirt.png",
-        track: "../public/music/Alice in Chains - Down in A Hole.mp3"
+        track: "../public/music/Alice in Chains - Down In A Hole .mp3" // Увага на пробіл перед .mp3 на скрині
     },
     {
         id: 3.2,
@@ -65,7 +67,7 @@ const AliceInChains = [
         artist: "Alice in Chains",
         album: "Facelift",
         cover: "../public/img/AiC_Facelift.png",
-        track: "../public/music/Alice in Chains - Man in the Box.mp3"
+        track: "../public/music/Alice in Chains - Man in the Box .mp3"
     },
     {
         id: 3.3,
@@ -73,7 +75,7 @@ const AliceInChains = [
         artist: "Alice in Chains",
         album: "Jar of Flies",
         cover: "../public/img/JoF.png",
-        track: "../public/music/Alice in Chains - Nutshell.mp3"
+        track: "../public/music/Alice in Chains - Nutshell .mp3"
     }
 ];
 
@@ -86,7 +88,6 @@ const Soundgarden = [
         cover: "../public/img/Soundgarden.png",
         track: "../public/music/Soundgarden - Black Hole Sun.mp3"
     },
-
     {
         id: 4.2,
         title: "Fell On Black Days",
@@ -120,21 +121,21 @@ const STP = [
         artist: "Stone Temple Pilots",
         album: "Core",
         cover: "../public/img/core.png",
-        track: "../public/music/Stone Temple Pilots - Plush.mp3"
-    },
+        track: "../public/music/Stone Temple Pilots - Plush .mp3"
+    }
 ];
 
 const Nirvana = [
     {
         id: 6.1,
-        title: "The Man Who Sold the World",
+        title: "The Man Who Sold The World",
         artist: "Nirvana",
         album: "MTV Unplugged",
         cover: "../public/img/MTV.png",
-        track: "../public/music/Nirvana - The Man Who Sold the World.mp3"
+        track: "../public/music/Nirvana - The Man Who Sold The World ....mp3" // Відповідно до скріна
     },
     {
-        id: 6.5,
+        id: 6.2,
         title: "Love Buzz",
         artist: "Nirvana",
         album: "Bleach",
@@ -142,33 +143,34 @@ const Nirvana = [
         track: "../public/music/Nirvana - Love Buzz.mp3"
     },
     {
-        id: 6.7,
+        id: 6.3,
         title: "Lithium",
         artist: "Nirvana",
         album: "Nevermind",
         cover: "../public/img/N.png",
-        track: "../public/music/Nirvana - Lithium.mp3"
+        track: "../public/music/Nirvana - Lithium .mp3"
     },
     {
-        id: 6.7,
+        id: 6.4,
         title: "All Apologies",
         artist: "Nirvana",
         album: "In Utero",
         cover: "../public/img/IU.png",
         track: "../public/music/Nirvana - All Apologies.mp3"
-    },
+    }
 ];
+
 const JudasPriest = [
     {
-        id: 8.1,
-        title: "Respecting the Law",
+        id: 7.1,
+        title: "Breaking the Law",
         artist: "Judas Priest",
         album: "British Steel",
         cover: "../public/img/BS.png",
-        track: "../public/music/Judas Priest - Braking the Law.mp3"
+        track: "../public/music/Judas Priest - Breaking the Law.mp3"
     },
     {
-        id: 8.2,
+        id: 7.2,
         title: "Painkiller",
         artist: "Judas Priest",
         album: "Painkiller",
@@ -176,9 +178,10 @@ const JudasPriest = [
         track: "../public/music/Judas Priest - Painkiller.mp3"
     }
 ];
+
 const Metallica = [
     {
-        id: 9.1,
+        id: 8.1,
         title: "Orion",
         artist: "Metallica",
         album: "Master of Puppets",
@@ -186,15 +189,15 @@ const Metallica = [
         track: "../public/music/Metallica - Orion.mp3"
     },
     {
-        id: 9.2,
-        title: "Batery",
+        id: 8.2,
+        title: "Battery",
         artist: "Metallica",
         album: "Master of Puppets",
         cover: "../public/img/MoP.png",
-        track: "../public/music/Metallica - Batery.mp3"
+        track: "../public/music/Metallica - Battery.mp3"
     },
     {
-        id: 9.3,
+        id: 8.3,
         title: "Ride the Lightning",
         artist: "Metallica",
         album: "Ride the Lightning",
@@ -202,23 +205,23 @@ const Metallica = [
         track: "../public/music/Metallica - Ride the Lightning.mp3"
     },
     {
-        id: 9.4,
+        id: 8.4,
         title: "Fade to Black",
         artist: "Metallica",
         album: "Ride the Lightning",
         cover: "../public/img/RtL.png",
-        track: "../public/music/Metallica - Fade to Black.mp3"
+        track: "../public/music/Metallica - Fade To Black .mp3"
     },
     {
-        id: 9.5,
-        title: "For Whom the Bell Tols",
+        id: 8.5,
+        title: "For Whom the Bell Tolls",
         artist: "Metallica",
         album: "Ride the Lightning",
         cover: "../public/img/RtL.png",
-        track: "../public/music/Metallica - For Whom the Bell Tols.mp3"
+        track: "../public/music/Metallica - For Whom The Bell Tolls (1).mp3"
     },
     {
-        id: 9.6,
+        id: 8.6,
         title: "One",
         artist: "Metallica",
         album: "...And Justice for All",
@@ -226,7 +229,7 @@ const Metallica = [
         track: "../public/music/Metallica - One.mp3"
     },
     {
-        id: 9.7,
+        id: 8.7,
         title: "Blackened",
         artist: "Metallica",
         album: "...And Justice for All",
@@ -234,11 +237,11 @@ const Metallica = [
         track: "../public/music/Metallica - Blackened.mp3"
     },
     {
-        id: 9.8,
-        title: "Seek and Destroy",
+        id: 8.8,
+        title: "Seek & Destroy",
         artist: "Metallica",
         album: "Kill 'Em All",
         cover: "../public/img/KeA.png",
-        track: "../public/music/Metallica - Seek and Destroy.mp3"
+        track: "../public/music/Metallica - Seek & Destroy.mp3"
     }
 ];
