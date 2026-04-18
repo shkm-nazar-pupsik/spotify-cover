@@ -125,6 +125,7 @@ body {
 .search-hint {
     color: var(--text-muted);
     font-size: 14px;
+}
 :root {
     --bg-image: url('/bg.jpg');
     --sidebar-bg: #0f0f0f;
