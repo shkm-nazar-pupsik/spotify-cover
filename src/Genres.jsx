@@ -1,9 +1,9 @@
 import './App.css'
 
 const genres = [
-    { title: 'Heavy', count: '160 Tracks', accent: 'gr1' },
-    { title: 'Grunge', count: '140 Tracks', accent: 'gr3' },
-    { title: 'Thrash', count: '180 Tracks', accent: 'gr4' },
+    { title: 'Thrash', count: '160 Tracks', accent: 'gr1' },
+    { title: 'Groovge', count: '140 Tracks', accent: 'gr3' },
+    { title: 'Heavy metal', count: '180 Tracks', accent: 'gr4' },
 ]
 
 export default function Genres() {
