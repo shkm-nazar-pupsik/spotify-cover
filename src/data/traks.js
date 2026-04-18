@@ -273,3 +273,16 @@ const Metallica = [
         track: "../public/music/Metallica - Seek & Destroy.mp3"
     }
 ];
+
+export const allTracks = [
+    ...Megadeth,
+    ...Pantera,
+    ...AliceInChains,
+    ...Soundgarden,
+    ...STP,
+    ...Nirvana,
+    ...JudasPriest,
+    ...Metallica
+];
+
+export { Megadeth, Pantera, AliceInChains, Soundgarden, STP, Nirvana, JudasPriest, Metallica };
