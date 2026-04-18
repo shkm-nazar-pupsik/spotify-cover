@@ -2,7 +2,7 @@ import './App.css'
 
 const genres = [
     { title: 'Thrash', count: '160 Tracks', accent: 'gr1' },
-    { title: 'Groovge', count: '140 Tracks', accent: 'gr3' },
+    { title: 'Groove', count: '140 Tracks', accent: 'gr3' },
     { title: 'Heavy metal', count: '180 Tracks', accent: 'gr4' },
 ]
 
