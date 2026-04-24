@@ -2,7 +2,7 @@ import './App.css'
 import { allTracks } from './data/traks.js'
 import { useState, useRef } from 'react'
 
-export default function TopMusic({currentGenre}) {
+export default function TopMusic({ currentGenre, onGenreSelect }) {
     const [currentTrack, setCurrentTrack] = useState(null)
     const [isPlaying, setIsPlaying] = useState(false)
     const audioRef = useRef(null)
@@ -40,13 +40,33 @@ export default function TopMusic({currentGenre}) {
     duration: '04:20', 
     active: currentTrack?.id === track.id
     }));
+    <div className="section-header">
+    <span className="section-label">Top Music</span>
+    
+    {currentGenre !== 'all' && (
+        <button 
+            className="pill-button" 
+            onClick={() => onGenreSelect('all')} // Скидаємо на 'all'
+            style={{ marginLeft: '10px', background: '#ff4444' }}
+        >
+            Назад до всіх
+        </button>
+    )}
+    </div>
 
     return (
         <>
             <audio ref={audioRef} onEnded={() => setIsPlaying(false)} />
             <section className="top-music-section card-panel">
                 <div className="section-header">
-                    <span className="section-label">Top Music</span>
+                    <span className="section-label">
+                        {currentGenre === 'all' ? 'Top Music' : currentGenre}
+                    </span>
+                    {currentGenre !== 'all' && (
+                        <button className="pill-button transparent" 
+                            onClick={() => onGenreSelect('all')}> ← Back to All
+                        </button>
+                    )}
                     <button className="pill-button transparent">Show More</button>
                 </div>
                 <div className="track-list">

@@ -15,7 +15,9 @@ function App() {
         <main className="content">
           <SearchPanel />
           <Genres onGenreSelect={setSelectedGenre}/>
-          <TopMusic currentGenre={selectedGenre} />
+          <TopMusic 
+            currentGenre={selectedGenre} 
+            onGenreSelect={setSelectedGenre} />
         </main>
       </div>
       <div className="player-bar">

@@ -1,6 +1,7 @@
 import './App.css'
 
 const genres = [
+    { title: 'all', count: 'All Tracks', accent: 'all' },
     { title: 'Thrash Metal', count: '160 Tracks', accent: 'gr1' },
     { title: 'Groove Metal', count: '140 Tracks', accent: 'gr3' },
     { title: 'Heavy Metal', count: '180 Tracks', accent: 'gr4' },
