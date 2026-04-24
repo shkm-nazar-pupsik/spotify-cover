@@ -2,7 +2,7 @@ import './App.css'
 import { allTracks } from './data/traks.js'
 import { useState, useRef } from 'react'
 
-export default function TopMusic() {
+export default function TopMusic({currentGenre}) {
     const [currentTrack, setCurrentTrack] = useState(null)
     const [isPlaying, setIsPlaying] = useState(false)
     const audioRef = useRef(null)
@@ -29,11 +29,16 @@ export default function TopMusic() {
         }
     }
 
-    const topTracks = allTracks.map((track, index) => ({
-        ...track,
-        number: (index + 1).toString().padStart(2, '0'),
-        duration: '04:20', // Placeholder duration
-        active: currentTrack?.id === track.id
+    const filteredTracks = allTracks.filter(track => {
+    if (currentGenre === 'all') return true;
+    return track.genre?.toLowerCase() === currentGenre.toLowerCase();
+    });
+
+    const topTracks = filteredTracks.map((track, index) => ({
+    ...track,
+    number: (index + 1).toString().padStart(2, '0'),
+    duration: '04:20', 
+    active: currentTrack?.id === track.id
     }));
 
     return (

@@ -4,16 +4,18 @@ import SearchPanel from './SearchPanel'
 import Genres from './Genres'
 import TopMusic from './TopMusic'
 import { PlayerBar } from './PlayerBar'
+import { useState } from 'react'
 
 function App() {
+  const [selectedGenre,setSelectedGenre]=useState("all")
   return (
     <>
       <div className="app">
         <Navigation />
         <main className="content">
           <SearchPanel />
-          <Genres />
-          <TopMusic />
+          <Genres onGenreSelect={setSelectedGenre}/>
+          <TopMusic currentGenre={selectedGenre} />
         </main>
       </div>
       <div className="player-bar">
