@@ -285,4 +285,13 @@ export const allTracks = [
     ...Metallica
 ];
 
+const genres = [
+    { title: 'Thrash', count: '160 Tracks', accent: 'gr1' },
+    { title: 'Groove', count: '140 Tracks', accent: 'gr3' },
+    { title: 'Heavy metal', count: '180 Tracks', accent: 'gr4' },
+    { title: 'Thrash Metal', count: '160 Tracks', accent: 'gr1' },
+    { title: 'Groove Metal', count: '140 Tracks', accent: 'gr3' },
+    { title: 'Heavy Metal', count: '180 Tracks', accent: 'gr4' },
+]
+
 export { Megadeth, Pantera, AliceInChains, Soundgarden, STP, Nirvana, JudasPriest, Metallica };
