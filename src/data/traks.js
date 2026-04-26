@@ -5,8 +5,8 @@ const Megadeth = [
         artist: "Megadeth",
         album: "Rust in Peace",
         genre: "Thrash Metal",
-        cover: "../public/img/rip.png",
-        track: "../public/music/Megadeth - Holy Wars… The Punishment Due.mp3"
+        cover: "/img/rip.png",
+        track: "/music/Megadeth - Holy Wars… The Punishment Due.mp3"
     },
     {
         id: 1.2,
@@ -14,8 +14,8 @@ const Megadeth = [
         artist: "Megadeth",
         album: "Rust in Peace",
         genre: "Thrash Metal",
-        cover: "../public/img/rip.png",
-        track: "../public/music/Megadeth - Hangar 18.mp3"
+        cover: "/img/rip.png",
+        track: "/music/Megadeth - Hangar 18.mp3"
     },
     {
         id: 1.3,
@@ -23,8 +23,8 @@ const Megadeth = [
         artist: "Megadeth",
         album: "Rust in Peace",
         genre: "Thrash Metal",
-        cover: "../public/img/rip.png",
-        track: "../public/music/Megadeth - Tornado Of Souls.mp3"
+        cover: "/img/rip.png",
+        track: "/music/Megadeth - Tornado Of Souls.mp3"
     },
     {
         id: 1.4,
@@ -32,8 +32,8 @@ const Megadeth = [
         artist: "Megadeth",
         album: "Hidden Treasures",
         genre: "Thrash Metal",
-        cover: "../public/img/HT.png",
-        track: "../public/music/Megadeth - Angry Again.mp3"
+        cover: "/img/HT.png",
+        track: "/music/Megadeth - Angry Again.mp3"
     }
 ];
 
@@ -44,8 +44,8 @@ const Pantera = [
         artist: "Pantera",
         album: "The Great Southern Trendkill",
         genre: "Groove Metal",
-        cover: "../public/img/TGST.png",
-        track: "../public/music/Pantera - 10s.mp3"
+        cover: "/img/TGST.png",
+        track: "/music/Pantera - 10s.mp3"
     },
     {
         id: 2.2,
@@ -53,8 +53,8 @@ const Pantera = [
         artist: "Pantera",
         album: "The Great Southern Trendkill",
         genre: "Groove Metal",
-        cover: "../public/img/TGST.png",
-        track: "../public/music/Pantera - Floods.mp3"
+        cover: "/img/TGST.png",
+        track: "/music/Pantera - Floods.mp3"
     }
 ];
 
@@ -65,8 +65,8 @@ const AliceInChains = [
         artist: "Alice in Chains",
         album: "Dirt",
         genre: "Grunge",
-        cover: "../public/img/Dirt.png",
-        track: "../public/music/Alice in Chains - Down In A Hole .mp3"
+        cover: "/img/Dirt.png",
+        track: "/music/Alice In Chains - Down In A Hole .mp3"
     },
     {
         id: 3.2,
@@ -74,8 +74,8 @@ const AliceInChains = [
         artist: "Alice in Chains",
         album: "Facelift",
         genre: "Grunge",
-        cover: "../public/img/AiC_Facelift.png",
-        track: "../public/music/Alice in Chains - Man in the Box .mp3"
+        cover: "/img/AiC_Facelift.png",
+        track: "/music/Alice in Chains - Man in the Box .mp3"
     },
     {
         id: 3.3,
@@ -83,8 +83,8 @@ const AliceInChains = [
         artist: "Alice in Chains",
         album: "Jar of Flies",
         genre: "Grunge",
-        cover: "../public/img/JoF.png",
-        track: "../public/music/Alice in Chains - Nutshell .mp3"
+        cover: "/img/JoF.png",
+        track: "/music/Alice in Chains - Nutshell .mp3"
     }
 ];
 
@@ -95,8 +95,8 @@ const Soundgarden = [
         artist: "Soundgarden",
         album: "Superunknown",
         genre: "Grunge",
-        cover: "../public/img/Soundgarden.png",
-        track: "../public/music/Soundgarden - Black Hole Sun.mp3"
+        cover: "/img/Soungarden.png",
+        track: "/music/Soundgarden - Black Hole Sun.mp3"
     },
     {
         id: 4.2,
@@ -104,8 +104,8 @@ const Soundgarden = [
         artist: "Soundgarden",
         album: "Superunknown",
         genre: "Grunge",
-        cover: "../public/img/Soundgarden.png",
-        track: "../public/music/Soundgarden - Fell On Black Days.mp3"
+        cover: "/img/Soungarden.png",
+        track: "/music/Soundgarden - Fell On Black Days.mp3"
     },
     {
         id: 4.3,
@@ -113,8 +113,8 @@ const Soundgarden = [
         artist: "Soundgarden",
         album: "Superunknown",
         genre: "Grunge",
-        cover: "../public/img/Soundgarden.png",
-        track: "../public/music/Soundgarden - Outshined.mp3"
+        cover: "/img/Soungarden.png",
+        track: "/music/Soundgarden - Outshined.mp3"
     }
 ];
 
@@ -125,8 +125,8 @@ const STP = [
         artist: "Stone Temple Pilots",
         album: "Purple",
         genre: "Grunge",
-        cover: "../public/img/STP.png",
-        track: "../public/music/Stone Temple Pilots - Interstate Love Song.mp3"
+        cover: "/img/STP.png",
+        track: "/music/Stone Temple Pilots - Interstate Love Song (1).mp3"
     },
     {
         id: 5.2,
@@ -134,8 +134,8 @@ const STP = [
         artist: "Stone Temple Pilots",
         album: "Core",
         genre: "Grunge",
-        cover: "../public/img/core.png",
-        track: "../public/music/Stone Temple Pilots - Plush .mp3"
+        cover: "/img/core.png",
+        track: "/music/Stone Temple Pilots - Plush .mp3"
     }
 ];
 
@@ -146,8 +146,8 @@ const Nirvana = [
         artist: "Nirvana",
         album: "MTV Unplugged",
         genre: "Grunge",
-        cover: "../public/img/MTV.png",
-        track: "../public/music/Nirvana - The Man Who Sold The World ....mp3"
+        cover: "/img/MTV.png",
+        track: "/music/Nirvana - The Man Who Sold The World ....mp3"
     },
     {
         id: 6.2,
@@ -155,8 +155,8 @@ const Nirvana = [
         artist: "Nirvana",
         album: "Bleach",
         genre: "Grunge",
-        cover: "../public/img/B.png",
-        track: "../public/music/Nirvana - Love Buzz.mp3"
+        cover: "/img/B.png",
+        track: "/music/Nirvana - Love Buzz.mp3"
     },
     {
         id: 6.3,
@@ -164,8 +164,8 @@ const Nirvana = [
         artist: "Nirvana",
         album: "Nevermind",
         genre: "Grunge",
-        cover: "../public/img/N.png",
-        track: "../public/music/Nirvana - Lithium .mp3"
+        cover: "/img/N.png",
+        track: "/music/Nirvana - Lithium .mp3"
     },
     {
         id: 6.4,
@@ -173,8 +173,8 @@ const Nirvana = [
         artist: "Nirvana",
         album: "In Utero",
         genre: "Grunge",
-        cover: "../public/img/IU.png",
-        track: "../public/music/Nirvana - All Apologies.mp3"
+        cover: "/img/IU.png",
+        track: "/music/Nirvana - All Apologies.mp3"
     }
 ];
 
@@ -185,8 +185,8 @@ const JudasPriest = [
         artist: "Judas Priest",
         album: "British Steel",
         genre: "Heavy Metal",
-        cover: "../public/img/BS.png",
-        track: "../public/music/Judas Priest - Breaking the Law.mp3"
+        cover: "/img/BS.png",
+        track: "/music/Judas Priest - Breaking the Law.mp3"
     },
     {
         id: 7.2,
@@ -194,8 +194,8 @@ const JudasPriest = [
         artist: "Judas Priest",
         album: "Painkiller",
         genre: "Heavy Metal",
-        cover: "../public/img/PK.png",
-        track: "../public/music/Judas Priest - Painkiller.mp3"
+        cover: "/img/PK.png",
+        track: "/music/Judas Priest - Painkiller.mp3"
     }
 ];
 
@@ -206,8 +206,8 @@ const Metallica = [
         artist: "Metallica",
         album: "Master of Puppets",
         genre: "Thrash Metal",
-        cover: "../public/img/MoP.png",
-        track: "../public/music/Metallica - Orion.mp3"
+        cover: "/img/MoP.png",
+        track: "/music/Metallica - Orion.mp3"
     },
     {
         id: 8.2,
@@ -215,8 +215,8 @@ const Metallica = [
         artist: "Metallica",
         album: "Master of Puppets",
         genre: "Thrash Metal",
-        cover: "../public/img/MoP.png",
-        track: "../public/music/Metallica - Battery.mp3"
+        cover: "/img/MoP.png",
+        track: "/music/Metallica - Battery.mp3"
     },
     {
         id: 8.3,
@@ -224,8 +224,8 @@ const Metallica = [
         artist: "Metallica",
         album: "Ride the Lightning",
         genre: "Thrash Metal",
-        cover: "../public/img/RtL.png",
-        track: "../public/music/Metallica - Ride the Lightning.mp3"
+        cover: "/img/RtL.png",
+        track: "/music/Metallica - Ride the Lightning.mp3"
     },
     {
         id: 8.4,
@@ -233,8 +233,8 @@ const Metallica = [
         artist: "Metallica",
         album: "Ride the Lightning",
         genre: "Thrash Metal",
-        cover: "../public/img/RtL.png",
-        track: "../public/music/Metallica - Fade To Black .mp3"
+        cover: "/img/RtL.png",
+        track: "/music/Metallica - Fade To Black .mp3"
     },
     {
         id: 8.5,
@@ -242,8 +242,8 @@ const Metallica = [
         artist: "Metallica",
         album: "Ride the Lightning",
         genre: "Thrash Metal",
-        cover: "../public/img/RtL.png",
-        track: "../public/music/Metallica - For Whom The Bell Tolls (1).mp3"
+        cover: "/img/RtL.png",
+        track: "/music/Metallica - For Whom The Bell Tolls (1).mp3"
     },
     {
         id: 8.6,
@@ -251,8 +251,8 @@ const Metallica = [
         artist: "Metallica",
         album: "...And Justice for All",
         genre: "Thrash Metal",
-        cover: "../public/img/AJfA.png",
-        track: "../public/music/Metallica - One.mp3"
+        cover: "/img/AJfA.png",
+        track: "/music/Metallica - One.mp3"
     },
     {
         id: 8.7,
@@ -260,8 +260,8 @@ const Metallica = [
         artist: "Metallica",
         album: "...And Justice for All",
         genre: "Thrash Metal",
-        cover: "../public/img/AJfA.png",
-        track: "../public/music/Metallica - Blackened.mp3"
+        cover: "/img/AJfA.png",
+        track: "/music/Metallica - Blackened.mp3"
     },
     {
         id: 8.8,
@@ -269,8 +269,8 @@ const Metallica = [
         artist: "Metallica",
         album: "Kill 'Em All",
         genre: "Thrash Metal",
-        cover: "../public/img/KeA.png",
-        track: "../public/music/Metallica - Seek & Destroy.mp3"
+        cover: "/img/KeA.png",
+        track: "/music/Metallica - Seek & Destroy.mp3"
     }
 ];
 
