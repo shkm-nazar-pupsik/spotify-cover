@@ -7,6 +7,7 @@ import { PlayerBar } from './PlayerBar'
 import { MusicProvider } from './MusicContext'
 
 function App() {
+  const [selectedGenre,setSelectedGenre]=useState("all")
   return (
     <MusicProvider>
       <>
