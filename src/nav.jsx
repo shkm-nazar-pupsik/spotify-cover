@@ -1,11 +1,11 @@
 import './App.css'
+import { Link } from 'react-router-dom'
 
 function Navigation() {
   return (
     <aside className="sidebar">
-      <div className="logo">
-        <i className="fas fa-bars-staggered"></i>
-        <span>Music 1</span>
+      <div className="logo-container">
+        <img src="./public/logo.png" alt="" className="logo" />
       </div>
 
       <nav className="nav-section">
@@ -14,12 +14,16 @@ function Navigation() {
           <li className="nav-item">
             <i className="far fa-user"></i> Profile
           </li>
-          <li className="nav-item active">
-            <i className="fas fa-th-large"></i> Home
+          <li className="nav-item">
+            <Link to="/">
+              <i className="fas fa-th-large"></i> Home
+            </Link>
           </li>
           <li className="nav-item">
-            <i className="far fa-heart"></i> Favorite
-          </li>-
+            <Link to="/favorites">
+              <i className="far fa-heart"></i> Favorite
+            </Link>
+          </li>
         </ul>
       </nav>
 

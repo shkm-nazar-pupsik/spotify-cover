@@ -1,39 +1,26 @@
 import './App.css'
-import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from './nav'
-import SearchPanel from './SearchPanel'
-import Genres from './Genres'
-import TopMusic from './TopMusic'
+import Home from './Home'
+import Favorites from './Favorites'
 import { PlayerBar } from './PlayerBar'
 import { MusicProvider } from './MusicContext'
 
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState(() => {
-    return localStorage.getItem('selectedGenre') || 'all'
-  })
-
-  useEffect(() => {
-    localStorage.setItem('selectedGenre', selectedGenre)
-  }, [selectedGenre])
-  
   return (
     <MusicProvider>
-      <>
+      <BrowserRouter>
         <div className="app">
           <Navigation />
-          <main className="content">
-            <SearchPanel />
-            <Genres onGenreSelect={setSelectedGenre}/>
-            <TopMusic 
-              currentGenre={selectedGenre} 
-              onGenreSelect={setSelectedGenre}
-            />
-          </main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/favorites" element={<Favorites />} />
+          </Routes>
         </div>
         <div className="player-bar">
           <PlayerBar />
         </div>
-      </>
+      </BrowserRouter>
     </MusicProvider>
   )
 }

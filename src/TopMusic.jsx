@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { MusicContext } from './MusicContext'
 
 export default function TopMusic({ currentGenre, onGenreSelect }) {
-    const { currentTrack, isPlaying, playTrack } = useContext(MusicContext)
+    const { currentTrack, isPlaying, playTrack, toggleFavorite, isFavorite } = useContext(MusicContext)
 
     const filteredTracks = allTracks.filter((track) => {
         if (currentGenre === 'all') return true
@@ -44,6 +44,11 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
                             <span>{track.artist}</span>
                         </div>
                         <div className="track-duration">{track.duration}</div>
+                        <button className="track-action" onClick={() => toggleFavorite(track)}>
+                            <svg className={`track-icon ${isFavorite(track.id) ? 'filled' : ''}`} viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </button>
                         <button className="track-action" onClick={() => playTrack(track, filteredTracks)}>
                             <svg className="track-icon" viewBox="0 0 24 24" aria-hidden="true">
                                 <path

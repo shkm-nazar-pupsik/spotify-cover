@@ -1,4 +1,4 @@
-import { createContext, useState, useCallback } from 'react'
+import { createContext, useState, useCallback, useEffect } from 'react'
 
 export const MusicContext = createContext()
 
@@ -7,6 +7,14 @@ export function MusicProvider({ children }) {
     const [queue, setQueue] = useState([])
     const [isPlaying, setIsPlaying] = useState(false)
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [favorites, setFavorites] = useState(() => {
+        const saved = localStorage.getItem('favorites')
+        return saved ? JSON.parse(saved) : []
+    })
+
+    useEffect(() => {
+        localStorage.setItem('favorites', JSON.stringify(favorites))
+    }, [favorites])
 
     const playTrack = useCallback((track, allTracks = []) => {
         setCurrentTrack(track)
@@ -37,6 +45,21 @@ export function MusicProvider({ children }) {
         setIsPlaying(state)
     }, [])
 
+    const toggleFavorite = useCallback((track) => {
+        setFavorites(prev => {
+            const isFav = prev.some(fav => fav.id === track.id)
+            if (isFav) {
+                return prev.filter(fav => fav.id !== track.id)
+            } else {
+                return [...prev, track]
+            }
+        })
+    }, [])
+
+    const isFavorite = useCallback((trackId) => {
+        return favorites.some(fav => fav.id === trackId)
+    }, [favorites])
+
     return (
         <MusicContext.Provider
             value={{
@@ -44,6 +67,7 @@ export function MusicProvider({ children }) {
                 queue,
                 isPlaying,
                 currentIndex,
+                favorites,
                 playTrack,
                 playNext,
                 playPrevious,
@@ -51,6 +75,8 @@ export function MusicProvider({ children }) {
                 setCurrentTrack,
                 setQueue,
                 setCurrentIndex,
+                toggleFavorite,
+                isFavorite,
             }}
         >
             {children}
