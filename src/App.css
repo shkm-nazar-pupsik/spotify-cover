@@ -1032,3 +1032,87 @@ body {
 .queue-list::-webkit-scrollbar-thumb:hover {
   background: #404040;
 }
+.search-container {
+    position: relative; /* Це важливо для позиціонування випадайки */
+    width: 100%;
+}
+
+.search-results-dropdown {
+    position: absolute;
+    top: 100%; /* Одразу під інпутом */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #181818; /* Темний фон як у тебе */
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-top: 5px;
+    padding: 10px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.result-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.result-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #888;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.track-meta {
+    display: flex;
+    align-items: center; /* Вирівнює текст по центру горизонталі */
+    gap: 8px; /* Створює автоматичний пробіл між назвою і артистом */
+}
+
+.track-title {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.artist-inline {
+    color: #b3b3b3; /* Робимо артиста сірим, як у Spotify */
+    font-weight: 400; /* Прибираємо жирність */
+    font-size: 0.9em;
+}
+.result-meta {
+    display: flex;
+    align-items: center; /* Вирівнює в один рядок по центру */
+    gap: 8px; /* Робить автоматичний відступ між елементами */
+    padding: 5px 10px;
+}
+
+.result-title {
+    color: #ffffff; /* Біла назва пісні */
+    font-weight: 600;
+}
+
+.result-artist {
+    color: #b3b3b3; /* Сірий колір для гурту */
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.result-item:hover {
+    background: rgba(255, 255, 255, 0.1); /* Підсвітка при наведенні */
+    border-radius: 4px;
+}

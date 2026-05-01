@@ -6,9 +6,11 @@ import { MusicContext } from './MusicContext'
 export default function TopMusic({ currentGenre, onGenreSelect }) {
     const { currentTrack, isPlaying, playTrack } = useContext(MusicContext)
 
+    // Фільтруємо ТІЛЬКИ за жанром. 
+    // Додаємо ?. щоб не було помилок, якщо раптом жанр у треку не прописаний
     const filteredTracks = allTracks.filter((track) => {
-        if (currentGenre === 'all') return true
-        return track.genre?.toLowerCase() === currentGenre.toLowerCase()
+        if (currentGenre === 'all') return true;
+        return track.genre?.toLowerCase().includes(currentGenre.toLowerCase());
     })
 
     const topTracks = filteredTracks.map((track, index) => ({
@@ -21,7 +23,10 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
     return (
         <section className="top-music-section card-panel">
             <div className="section-header">
-                <span className="section-label">Top Music</span>
+                <span className="section-label">
+                    {currentGenre === 'all' ? 'Top Music' : currentGenre}
+                </span>
+                
                 {currentGenre !== 'all' && (
                     <button
                         className="pill-button transparent"
@@ -32,6 +37,7 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
                 )}
                 <button className="pill-button transparent">Show More</button>
             </div>
+
             <div className="track-list">
                 {topTracks.map((track) => (
                     <div
@@ -39,9 +45,9 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
                         className={`track-row ${track.active ? 'active-track' : ''}`}
                     >
                         <div className="track-index">{track.number}</div>
-                        <div className="track-meta">
-                            <strong>{track.title}</strong>
-                            <span>{track.artist}</span>
+                       <div className="track-meta">
+                            <strong className="track-title">{track.title}</strong>
+                            <span className="artist-inline"> — {track.artist}</span>
                         </div>
                         <div className="track-duration">{track.duration}</div>
                         <button className="track-action" onClick={() => playTrack(track, filteredTracks)}>
