@@ -101,6 +101,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    margin-left: -25px;
+    width: 100%;
 }
 
 .search-input-wrap {
@@ -281,6 +283,10 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+.icon.active {
+    color: #1db954; /* як у Spotify */
+    fill: #1db954;
+}
 
 .track-icon.filled {
     fill: #ff6b6b;
@@ -365,6 +371,11 @@ body {
 
 .genre-gr4 {
     background-image: url('/gr-4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.genre-gr2{
+    background-image: url('/gr-2.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -475,29 +486,153 @@ body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+.burger {
+  display: none;
+}
+
+.close-btn {
+  display: none;
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
 
 @media (max-width: 780px) {
-    #root {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 70px;
-    }
 
-    .app {
-        flex-direction: column;
-    }
+  /* 🍔 BURGER */
+  .burger {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+  }
 
-    .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-    }
+  /* 🌑 OVERLAY */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+  }
 
-    .genre-grid {
-        grid-template-columns: 1fr;
+  /* 📱 SIDEBAR */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 260px;
+    height: 100%;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    background: var(--sidebar-bg);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* ❌ CLOSE BUTTON */
+  .close-btn {
+    display: block;
+    align-self: flex-end;
+    margin: 10px 10px 0 0;
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* 🧢 LOGO FULL WIDTH */
+  .logo-container {
+    width: 100%;
+  }
+
+  .logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* ❗ ВАЖЛИВО: прибрати стару поведінку */
+  #root {
+    grid-template-columns: 1fr;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 260px; /* НЕ 100% */
+  }
+}
+@media (max-width: 780px) {
+    .top-music-section {
+        gap: 8px; /* Зменшуємо загальний відступ */
     }
 
     .track-row {
-        grid-template-columns: 40px 1fr 60px 40px;
+        /* Змінюємо сітку: Індекс та Час прибираємо для компактності */
+        /* Нова структура: Назва(1fr) | Серце(40px) | Play(40px) */
+        grid-template-columns: 1fr 40px 40px; 
+        gap: 8px;
+        padding: 8px 12px; /* Зменшено вдвічі */
+        border-radius: 12px;
+    }
+
+    /* Приховуємо номер треку та тривалість на малих екранах */
+    .track-index, 
+    .track-duration {
+        display: none;
+    }
+
+    .track-meta {
+        gap: 2px;
+    }
+
+    .track-meta strong {
+        font-size: 13px; /* Зменшуємо шрифт */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Щоб довгі назви не ламали верстку */
+    }
+
+    .track-meta .artist-inline {
+        font-size: 11px;
+    }
+
+    .track-action {
+        width: 30px;  /* Зменшений розмір кнопок */
+        height: 30px;
+    }
+
+    .track-icon {
+        width: 16px;  /* Менші іконки */
+        height: 16px;
+    }
+
+    /* Адаптуємо хедер секції */
+    .section-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section-label {
+        font-size: 14px;
+    }
+
+    .pill-button {
+        padding: 4px 10px;
+        font-size: 11px;
     }
 }
 
@@ -548,6 +683,11 @@ body {
     transition: all 0.3s ease;
     gap: 12px;
     font-size: 14px;
+}
+.link-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin-left: 11px;
 }
 
 .nav-item:hover {
@@ -720,70 +860,106 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%; /* Додано для стабільності */
 }
 
 .time {
   font-size: 11px;
   color: #aaa;
+  min-width: 35px; /* Щоб час не "стрибав" */
 }
 
 .progress {
   flex: 1;
   height: 4px;
-  background: #333;
+  background: #333; /* Колір фону (сірий) */
   border-radius: 2px;
   position: relative;
-  width: 100%;
+  cursor: pointer;
   transition: height 0.2s ease;
-
-  &:hover {
-    height: 6px;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
 }
 
-.progress-filled {
+.progress:hover {
+  height: 6px;
+}
+
+/* Видаліть або закоментуйте ці псевдоелементи, якщо вони створюють фіолетові плями */
+.progress::before,
+.progress::after {
+  display: none; 
+}
+
+.player-bar .progress-filled {
+  /* Скидання будь-яких зовнішніх ефектів */
+  all: unset; 
+  
+  display: block;
   height: 100%;
-  background: var(--accent-primary);
-  border-radius: 2px;
   width: 0%;
+  border-radius: 2px;
   transition: width 0.1s linear;
+  
+  /* Жорсткий колір */
+  background-color: rgb(29, 185, 84) !important;
+  background-image: none !important;
+  
+  /* Вимкнення змішування кольорів */
+  mix-blend-mode: normal !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+/* Прибираємо стандартний вигляд */
+.player-right input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100px;
 }
 
-.progress-handle {
+/* Стиль самої доріжки (полоски) */
+.player-right input[type="range"]::-webkit-slider-runnable-track {
+  background: #4d4d4d;
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* Стиль повзунка (кружечка) */
+.player-right input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -4px; /* Центрування відносно доріжки */
+  background-color: #1db954;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+}
+
+/* Колір при наведенні */
+.player-right input[type="range"]:hover::-webkit-slider-thumb {
+  background-color: #1ed760;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Додамо кружечок (handle), який ви прописали, але не додали в JSX */
+.progress-filled::after {
+  content: '';
   position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 12px;
   height: 12px;
-  background: var(--accent-bright);
+  background: #fff;
   border-radius: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.2s ease;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-.progress:hover .progress-handle {
+.progress:hover .progress-filled::after {
   opacity: 1;
 }
-
 /* RIGHT */
 .player-right {
   display: flex;
@@ -1052,6 +1228,103 @@ body {
 
 .queue-list::-webkit-scrollbar-thumb:hover {
   background: #404040;
+}
+/* 1. Планшетна та загальна мобільна версія (до 780px) */
+@media (max-width: 780px) {
+    .player {
+        height: 70px;
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .cover {
+        width: 36px;
+        height: 36px;
+    }
+
+    .track-info .title {
+        font-size: 11px;
+        max-width: 90px;
+    }
+
+    /* Всі кнопки на місці, але трохи менші */
+    .controls {
+        gap: 4px;
+    }
+
+    .btn .icon-svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .play {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Зменшуємо гучність, але поки не ховаємо */
+    .player-right input[type="range"] {
+        width: 60px;
+    }
+}
+
+/* 2. Смартфони (до 480px) — Прибираємо гучність, оптимізуємо простір */
+@media (max-width: 480px) {
+    .player {
+        height: 65px;
+        /* Розподіляємо простір: Info(авто) | Controls(центр) | Modes(право) */
+        grid-template-columns: auto 1fr auto; 
+    }
+
+    /* Ховаємо слайдер гучності */
+    .player-right input[type="range"] {
+        display: none;
+    }
+
+    /* Ховаємо назву артиста, залишаємо тільки назву треку для економії місця */
+    .track-info .artist {
+        display: none;
+    }
+
+    .track-info .title {
+        font-size: 10px;
+        max-width: 60px;
+    }
+
+    /* Центруємо основні кнопки */
+    .player-center {
+        margin: 0;
+        flex: 3;
+    }
+
+    .controls {
+        gap: 6px; /* Трохи збільшуємо відстань, щоб було легше влучити пальцем */
+    }
+
+    .btn .icon-svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    /* Кнопки Shuffle та Repeat ставимо в ряд */
+    .player-right {
+        gap: 4px;
+    }
+
+    .icon .icon-svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Прогрес-бар робимо максимально простим */
+    .time {
+        font-size: 9px;
+        min-width: 20px;
+    }
+    
+    .progress-filled::after {
+        display: none !important; /* Ховаємо "кружечок" на прогресі, щоб не заважав */
+    }
 }
 .search-container {
     position: relative; /* Це важливо для позиціонування випадайки */

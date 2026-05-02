@@ -1,48 +1,73 @@
 import './App.css'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 function Navigation() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
-    <aside className="sidebar">
-      <div className="logo-container">
-        <img src="./public/logo.png" alt="" className="logo" />
-      </div>
+    <>
+      {/* 🍔 BURGER */}
+      <button className="burger" onClick={() => setMenuOpen(true)}>
+        ☰
+      </button>
 
-      <nav className="nav-section">
-        <p className="section-title">Menu</p>
-        <ul className="nav-list">
-          <li className="nav-item">
-            <i className="far fa-user"></i> Profile
-          </li>
-          <li className="nav-item">
-            <Link to="/">
-              <i className="fas fa-th-large"></i> Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/favorites">
-              <i className="far fa-heart"></i> Favorite
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      {/* 🌑 OVERLAY */}
+      {menuOpen && (
+        <div className="overlay" onClick={() => setMenuOpen(false)} />
+      )}
 
-      <nav className="nav-section">
-        <p className="section-title">Help</p>
-        <ul className="nav-list">
-          <li className="nav-item">
-            <i className="fas fa-cog"></i> Settings
-          </li>
-          <li className="nav-item">
-            <i className="far fa-question-circle"></i> FAQs
-          </li>
-        </ul>
-      </nav>
+      {/* 📱 SIDEBAR */}
+      <aside className={`sidebar ${menuOpen ? 'open' : ''}`}>
+        
+        {/* ❌ CLOSE */}
+        <button className="close-btn" onClick={() => setMenuOpen(false)}>
+          ✕
+        </button>
 
-      <div className="footer">
-        <p className="version">Version 1.0.0</p>
-      </div>
-    </aside>
+        {/* 🧢 LOGO */}
+        <div className="logo-container">
+          <img src="/logo.png" alt="logo" className="logo" />
+        </div>
+
+        <nav className="nav-section">
+          <p className="section-title">Menu</p>
+          <ul className="nav-list">
+            <li className="nav-item">
+              <i className="far fa-user"></i> Profile
+            </li>
+
+            <li className="nav-item link-item">
+              <Link to="/" onClick={() => setMenuOpen(false)}>
+                <i className="fas fa-th-large"></i> Home
+              </Link>
+            </li>
+
+            <li className="nav-item link-item">
+              <Link to="/favorites" onClick={() => setMenuOpen(false)}>
+                <i className="far fa-heart"></i> Favorite
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <nav className="nav-section">
+          <p className="section-title">Help</p>
+          <ul className="nav-list">
+            <li className="nav-item">
+              <i className="fas fa-cog"></i> Settings
+            </li>
+            <li className="nav-item">
+              <i className="far fa-question-circle"></i> FAQs
+            </li>
+          </ul>
+        </nav>
+
+        <div className="footer">
+          <p className="version">Version 1.0.0</p>
+        </div>
+      </aside>
+    </>
   )
 }
 

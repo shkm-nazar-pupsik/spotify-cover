@@ -1,13 +1,15 @@
 import './App.css'
 import { allTracks } from './data/traks.js'
-import { useContext } from 'react'
+import { useContext, useState } from 'react' // Додали useState
 import { MusicContext } from './MusicContext'
 
 export default function TopMusic({ currentGenre, onGenreSelect }) {
     const { currentTrack, isPlaying, playTrack, toggleFavorite, isFavorite } = useContext(MusicContext)
+    
+    // Стан для керування видимістю (згорнуто/розгорнуто)
+    const [isExpanded, setIsExpanded] = useState(false)
 
-    // Фільтруємо ТІЛЬКИ за жанром. 
-    // Додаємо ?. щоб не було помилок, якщо раптом жанр у треку не прописаний
+    // Фільтруємо за жанром
     const filteredTracks = allTracks.filter((track) => {
         if (currentGenre === 'all') return true;
         return track.genre?.toLowerCase().includes(currentGenre.toLowerCase());
@@ -19,6 +21,10 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
         duration: '04:20',
         active: currentTrack?.id === track.id
     }))
+
+    // Визначаємо, які треки показувати:
+    // Якщо isExpanded === true — показуємо всі, інакше — лише перші 5
+    const visibleTracks = isExpanded ? topTracks : topTracks.slice(0, 5);
 
     return (
         <section className="top-music-section card-panel">
@@ -35,17 +41,26 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
                         ← Back to All
                     </button>
                 )}
-                <button className="pill-button transparent">Show More</button>
+
+                {/* Кнопка Show More / Show Less з'являється тільки якщо треків більше 5 */}
+                {topTracks.length > 5 && (
+                    <button 
+                        className="pill-button transparent"
+                        onClick={() => setIsExpanded(!isExpanded)}
+                    >
+                        {isExpanded ? 'Show Less' : 'Show More'}
+                    </button>
+                )}
             </div>
 
             <div className="track-list">
-                {topTracks.map((track) => (
+                {visibleTracks.map((track) => (
                     <div
                         key={track.id}
                         className={`track-row ${track.active ? 'active-track' : ''}`}
                     >
                         <div className="track-index">{track.number}</div>
-                       <div className="track-meta">
+                        <div className="track-meta">
                             <strong className="track-title">{track.title}</strong>
                             <span className="artist-inline"> — {track.artist}</span>
                         </div>
