@@ -728,6 +728,69 @@ body {
 .fa-comment-dots {
     margin-left: -27.5px;
 }
+/* Базовий стиль для великих екранів (наприклад, по 4 або 5 в ряд) */
+.genres-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+/* Мобільна версія (менше 780px) — строго по 2 в ряд */
+/* Базова сітка для десктопа */
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+/* Адаптив для екранів до 780px */
+@media (max-width: 780px) {
+    .genre-grid {
+        /* Рівно 2 колонки */
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px;
+    }
+
+    .genre-card {
+        /* Зменшуємо вдвічі: менше padding та висота */
+        padding: 12px;
+        min-height: 80px; 
+        border-radius: 14px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .genre-title {
+        font-size: 13px; /* Було 16-18px */
+        margin-bottom: 4px;
+    }
+
+    .genre-count {
+        font-size: 10px; /* Було 12-13px */
+        opacity: 0.8;
+    }
+
+    .genre-action {
+        /* Зменшуємо кнопку Play на картці */
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Для дуже вузьких екранів */
+@media (max-width: 400px) {
+    .genre-grid {
+        gap: 8px;
+    }
+    
+    .genre-card {
+        padding: 10px;
+    }
+}
 
 /* Footer / Now Playing */
 .footer {

@@ -1,7 +1,7 @@
+import { useState, useEffect } from 'react'
 import './App.css'
-import { useState } from 'react' // Імпортуємо useState
 
-const genres = [
+const genresData = [
     { title: 'all', count: 'All Tracks', accent: 'all' },
     { title: 'Thrash Metal', count: '160 Tracks', accent: 'gr1' },
     { title: 'Groove Metal', count: '140 Tracks', accent: 'gr3' },
@@ -10,19 +10,28 @@ const genres = [
 ]
 
 export default function Genres({ onGenreSelect }) {
-    // Стан для контролю кількості карток
     const [isExpanded, setIsExpanded] = useState(false)
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 780)
 
-    // Визначаємо, які жанри показувати (спочатку тільки 3)
-    const visibleGenres = isExpanded ? genres : genres.slice(0, 3)
+    // Слідкуємо за розміром екрана
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 780)
+        }
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    // Визначаємо ліміт: 2 для мобілок, 3 для ПК
+    const limit = isMobile ? 2 : 3
+    const visibleGenres = isExpanded ? genresData : genresData.slice(0, limit)
 
     return (
         <section className="genres-section card-panel">
             <div className="section-header">
                 <span className="section-label">Discover Genre</span>
                 
-                {/* Показуємо кнопку тільки якщо жанрів більше 3 */}
-                {genres.length > 3 && (
+                {genresData.length > limit && (
                     <button 
                         className="pill-button" 
                         onClick={() => setIsExpanded(!isExpanded)}
@@ -37,8 +46,7 @@ export default function Genres({ onGenreSelect }) {
                     <article 
                         key={genre.title} 
                         className={`genre-card genre-${genre.accent}`}
-                        onClick={() => onGenreSelect(genre.title)} 
-                        style={{ cursor: 'pointer' }}
+                        onClick={() => onGenreSelect && onGenreSelect(genre.title)} 
                     >
                         <div className="genre-title">{genre.title}</div>
                         <div className="genre-count">{genre.count}</div>
