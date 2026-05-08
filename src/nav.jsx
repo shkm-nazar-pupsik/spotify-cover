@@ -7,25 +7,23 @@ function Navigation() {
 
   return (
     <>
-      {/* 🍔 BURGER */}
       <button className="burger" onClick={() => setMenuOpen(true)}>
         ☰
       </button>
 
-      {/* 🌑 OVERLAY */}
       {menuOpen && (
         <div className="overlay" onClick={() => setMenuOpen(false)} />
       )}
 
-      {/* 📱 SIDEBAR */}
+      
       <aside className={`sidebar ${menuOpen ? 'open' : ''}`}>
         
-        {/* ❌ CLOSE */}
+        
         <button className="close-btn" onClick={() => setMenuOpen(false)}>
           ✕
         </button>
 
-        {/* 🧢 LOGO */}
+        
         <div className="logo-container">
           <img src="/logo.png" alt="logo" className="logo" />
         </div>
@@ -72,3 +70,4 @@ function Navigation() {
 }
 
 export default Navigation
+

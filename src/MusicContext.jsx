@@ -8,12 +8,12 @@ export function MusicProvider({ children }) {
     const [isPlaying, setIsPlaying] = useState(false)
     const [currentIndex, setCurrentIndex] = useState(0)
     const [favorites, setFavorites] = useState(() => {
-        const saved = localStorage.getItem('favorites')
+        const saved = sessionStorage.getItem('favorites')
         return saved ? JSON.parse(saved) : []
     })
 
     useEffect(() => {
-        localStorage.setItem('favorites', JSON.stringify(favorites))
+        sessionStorage.setItem('favorites', JSON.stringify(favorites))
     }, [favorites])
 
     const playTrack = useCallback((track, allTracks = []) => {
@@ -83,3 +83,4 @@ export function MusicProvider({ children }) {
         </MusicContext.Provider>
     )
 }
+

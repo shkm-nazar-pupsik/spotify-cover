@@ -6,11 +6,11 @@ import TopMusic from './TopMusic'
 
 export default function Home() {
     const [selectedGenre, setSelectedGenre] = useState(() => {
-        return localStorage.getItem('selectedGenre') || 'all'
+        return sessionStorage.getItem('selectedGenre') || 'all'
     })
 
     useEffect(() => {
-        localStorage.setItem('selectedGenre', selectedGenre)
+        sessionStorage.setItem('selectedGenre', selectedGenre)
     }, [selectedGenre])
 
     return (

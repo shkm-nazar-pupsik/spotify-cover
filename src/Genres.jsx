@@ -13,7 +13,7 @@ export default function Genres({ onGenreSelect }) {
     const [isExpanded, setIsExpanded] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 780)
 
-    // Слідкуємо за розміром екрана
+    
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 780)
@@ -22,7 +22,7 @@ export default function Genres({ onGenreSelect }) {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    // Визначаємо ліміт: 2 для мобілок, 3 для ПК
+    
     const limit = isMobile ? 2 : 3
     const visibleGenres = isExpanded ? genresData : genresData.slice(0, limit)
 

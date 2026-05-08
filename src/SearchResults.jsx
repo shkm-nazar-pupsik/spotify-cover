@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'; // Додай { useContext } сюди
+import React, { useContext } from 'react'; 
 import { MusicContext } from './MusicContext';
 
 export default function SearchResults({ results, clearSearch }) {

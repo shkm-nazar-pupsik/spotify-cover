@@ -1,15 +1,15 @@
 import './App.css'
 import { allTracks } from './data/traks.js'
-import { useContext, useState } from 'react' // Додали useState
+import { useContext, useState } from 'react' 
 import { MusicContext } from './MusicContext'
 
 export default function TopMusic({ currentGenre, onGenreSelect }) {
     const { currentTrack, isPlaying, playTrack, toggleFavorite, isFavorite } = useContext(MusicContext)
     
-    // Стан для керування видимістю (згорнуто/розгорнуто)
+    
     const [isExpanded, setIsExpanded] = useState(false)
 
-    // Фільтруємо за жанром
+    
     const filteredTracks = allTracks.filter((track) => {
         if (currentGenre === 'all') return true;
         return track.genre?.toLowerCase().includes(currentGenre.toLowerCase());
@@ -18,12 +18,12 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
     const topTracks = filteredTracks.map((track, index) => ({
         ...track,
         number: (index + 1).toString().padStart(2, '0'),
-        duration: '04:20',
+        duration: track.duration || '0:00',
         active: currentTrack?.id === track.id
     }))
 
-    // Визначаємо, які треки показувати:
-    // Якщо isExpanded === true — показуємо всі, інакше — лише перші 5
+    
+    
     const visibleTracks = isExpanded ? topTracks : topTracks.slice(0, 5);
 
     return (
@@ -42,7 +42,7 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
                     </button>
                 )}
 
-                {/* Кнопка Show More / Show Less з'являється тільки якщо треків більше 5 */}
+                
                 {topTracks.length > 5 && (
                     <button 
                         className="pill-button transparent"
@@ -85,3 +85,4 @@ export default function TopMusic({ currentGenre, onGenreSelect }) {
         </section>
     )
 }
+

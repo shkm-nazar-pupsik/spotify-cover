@@ -8,7 +8,7 @@ export default function Favorites() {
     const favoriteTracks = favorites.map((track, index) => ({
         ...track,
         number: (index + 1).toString().padStart(2, '0'),
-        duration: '04:20',
+        duration: track.duration || '0:00',
         active: currentTrack?.id === track.id
     }))
 

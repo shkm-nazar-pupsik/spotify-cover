@@ -30,7 +30,7 @@ export function PlayerBar() {
     if (currentTrack && audioRef.current) {
         const trackPath = currentTrack.track.replace('../public', '')
 
-        // ❗ ВАЖЛИВО: не перезаписувати якщо той самий трек
+        
         if (audioRef.current.src !== window.location.origin + trackPath) {
             audioRef.current.src = trackPath
         }
@@ -220,7 +220,7 @@ export function PlayerBar() {
                             </svg>
                         </button>
 
-                        {/* ✅ FIXED NEXT */}
+                        
                         <button className="btn" onClick={handleNext}>
                             <svg className="icon-svg" viewBox="0 0 24 24">
                                 <path d="M20 5v14M4 5l10 7-10 7V5z" />
@@ -257,7 +257,7 @@ export function PlayerBar() {
                         onChange={handleVolumeChange}
                     />
 
-                    {/* SHUFFLE */}
+                    
                     <button
                         className={`icon ${shuffleMode ? 'active' : ''}`}
                         onClick={handleShuffleToggle}
@@ -267,7 +267,7 @@ export function PlayerBar() {
                         </svg>
                     </button>
 
-                    {/* REPEAT */}
+                    
                     <button
                         className={`icon ${queueMode === 'repeat' ? 'active' : ''}`}
                         onClick={handleQueueModeToggle}
@@ -282,3 +282,4 @@ export function PlayerBar() {
         </div>
     )
 }
+

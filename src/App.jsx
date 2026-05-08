@@ -15,7 +15,7 @@ import { allTracks } from './data/traks.js'
 function App() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedGenre, setSelectedGenre] = useState(() => {
-    return localStorage.getItem('selectedGenre') || 'all'
+    return sessionStorage.getItem('selectedGenre') || 'all'
   })
 
   const searchResultTracks = searchQuery.length > 0
@@ -26,7 +26,7 @@ function App() {
     : []
 
   useEffect(() => {
-    localStorage.setItem('selectedGenre', selectedGenre)
+    sessionStorage.setItem('selectedGenre', selectedGenre)
   }, [selectedGenre])
 
   return (

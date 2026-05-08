@@ -11,7 +11,7 @@ export default function SearchPanel({ onSearch }) {
                 <input 
                     type="text" 
                     placeholder="Search music..." 
-                    onChange={(e) => onSearch(e.target.value)} // Виклик функції
+                    onChange={(e) => onSearch(e.target.value)} 
                 />
             </div>
             <p className="search-hint">Find tracks, playlists and genres in one place.</p>
